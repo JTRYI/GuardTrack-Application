@@ -1,8 +1,10 @@
 /* Import Lato font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-.app-parent{
+.cameraFeed {
     font-family: 'Lato';
-    height: 100vh;
-    background-color: black;
+    color: white;
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
