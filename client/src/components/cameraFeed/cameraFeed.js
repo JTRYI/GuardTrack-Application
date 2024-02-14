@@ -4,6 +4,7 @@ import { Text, Badge, Box, Button } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { useToast } from '@chakra-ui/react'
+import { WarningIcon, NotAllowedIcon } from '@chakra-ui/icons'
 
 function CameraFeed() {
 
@@ -79,18 +80,27 @@ function CameraFeed() {
 
   return (
     <div className="cameraFeed">
-      <Text>Live Camera Feed <FontAwesomeIcon icon={faCircle} beat style={{ color: "#ff0000", paddingLeft: '5px' }} />
+      <Text fontSize='lg'>Live Camera Feed <FontAwesomeIcon icon={faCircle} beat style={{ color: "#ff0000", paddingLeft: '5px' }} />
       </Text>
       {cameraActive ? <video width={600} height={300} controls loop autoPlay muted style={{ marginTop: '10px' }}>
         <source src='https://d3uzrrhwcf413t.cloudfront.net/pests-in-car.mp4' type='video/mp4' />
       </video> : <Box width='100%' height='30vh' marginTop='10px' style={{ border: '1px solid grey', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Text>Camera is currently <Badge colorScheme='red'>offline</Badge> . No Threats Detected.</Text></Box>}
 
-      <Button colorScheme='red' variant='outline' marginTop='20px' onClick={() => {
+      <Button colorScheme='red' variant='outline' rightIcon={<NotAllowedIcon/>} marginTop='20px' onClick={() => {
+        if (!isPlaying) {
+          toast({
+            title: 'Video Camera is already Offline',
+            status: 'warning',
+            duration: 9000,
+            isClosable: true,
+          });
+        } else {
         toast.promise(offCamera(), {
           loading: { title: "Video Camera is being Turned Off", description: "Please Wait" },
           success: { title: "Video Camera Turned Off", status: "success" },
           error: { title: "Error", status: "error" }
-        }); 
+        });
+      } 
       }}>
         Turn Off Camera
       </Button>
