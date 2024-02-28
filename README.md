@@ -9,6 +9,7 @@ Car owners often face challenges related to the security and well-being of their
 
 ## How was it Built/Simulated?
 Built and Simulated with AWS Services and React
+This Repository/Application works with "GuardTrack-IoT-Devices" Repository for the Simulation to Work. 
 
 ## AWS Services Used
   - IoT Core
