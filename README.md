@@ -7,8 +7,8 @@ TP Year 2 Sem 2 Project for IoT Application Development Module
 GuardTrack addresses the pressing issue of unauthorized access, potential theft, and safety concerns within parked cars. 
 Car owners often face challenges related to the security and well-being of their vehicles, especially in scenarios where they are unable to physically inspect the car's interior.
 
-## How was it Built/Simulated?
-Built and Simulated with AWS Services and React
+## How was it Build/Simulated?
+Built and Simulated with AWS Services and React. <br/>
 This Repository/Application works with "GuardTrack-IoT-Devices" Repository for the Simulation to Work. 
 
 ## AWS Services Used
